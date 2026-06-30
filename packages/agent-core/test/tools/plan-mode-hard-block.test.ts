@@ -17,6 +17,7 @@ const signal = new AbortController().signal;
 async function activePlanAgent(): Promise<{ agent: Agent; planMode: PlanMode }> {
   const agent = {
     homedir: '/tmp/kimi-plan-test',
+    config: { cwd: '/tmp/kimi-plan-test/workspace' },
     emitStatusUpdated: vi.fn(),
     records: { logRecord: vi.fn() },
     replayBuilder: { push: vi.fn() },

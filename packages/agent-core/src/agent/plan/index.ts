@@ -131,10 +131,7 @@ export class PlanMode {
   }
 
   private planFilePathFor(id: string): string {
-    const plansDir =
-      this.agent.homedir === undefined
-        ? join(this.agent.config.cwd, 'plan')
-        : join(this.agent.homedir, 'plans');
+    const plansDir = join(this.agent.config.cwd, '.kimi-code', 'plans');
     return join(plansDir, `${id}.md`);
   }
 }
